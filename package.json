@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Adds capnproto schema language support to atom",
   "repository": "https://github.com/atom/language-capnproto",
-  "license": "MIT",
+  "license": "ISC",
   "engines": {
     "atom": ">0.50.0"
   },
