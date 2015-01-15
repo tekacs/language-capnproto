@@ -1,0 +1,51 @@
+'fileTypes': [
+  'capnp'
+]
+'name': 'Cap\'n Proto'
+'patterns': [
+  {
+    'match': '\\@(([0-9]+)|(0x[0-9a-fA-F]+))\\b'
+    'name': 'keyword.type.capnp'
+  }
+  {
+    'match': '\\b(struct|enum|interface|extends|const|using|import|annotation)\\b'
+    'name': 'keyword.type.capnp'
+  }
+  {
+    'begin': '#'
+    'end': '$'
+    'name': 'comment.line.pound.capnp'
+  }
+  {
+    'begin': '(0x)?"'
+    'end': '"'
+    'name': 'string.quoted.double.capnp'
+  }
+  {
+    'match': '(?<=:)\\s*(Void|Bool|Int8|Int16|Int32|Int64|UInt8|UInt16|UInt32|UInt64|Float32|Float64|Text|Data|List)\\b'
+    'name': 'constant.language.capnp'
+  }
+  {
+    'match': '\\b((0x[0-9a-fA-F]+)|((([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?))\\b'
+    'name': 'constant.numeric.capnp'
+  }
+  {
+    'match': '\\b(inf|nan|void|true|false)(?!\\s*@)\\b'
+    'name': 'constant.other.capnp'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'entity.name.type.capnp'
+    'match': '(?<=struct|enum|annotation)\\s+([a-zA-Z0-9_]+)\\b'
+  }
+  {
+    'begin': '#'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.capnp'
+    'end': '$\\n?'
+    'name': 'comment.line.pound.capnp'
+  }
+]
+'scopeName': 'source.capnp'

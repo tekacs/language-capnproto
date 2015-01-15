@@ -1,0 +1,12 @@
+{
+  "name": "language-capnproto",
+  "version": "0.1.0",
+  "description": "Adds capnproto schema language support to atom",
+  "repository": "https://github.com/atom/language-capnproto",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
