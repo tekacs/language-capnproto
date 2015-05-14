@@ -7,7 +7,7 @@ patterns: [
     name: 'keyword.type.capnp'
   }
   {
-    match: '\\b(struct|enum|interface|extends|const|using|import|annotation)\\b'
+    match: '\\b(struct|enum|interface|extends|const|using|import|annotation|union)\\b'
     name: 'keyword.type.capnp'
   }
   {
