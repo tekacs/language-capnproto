@@ -1,5 +1,5 @@
 {CompositeDisposable} = require 'atom'
-bignum                  = require 'bignum'
+bignum                = require 'big-integer'
 module.exports = CapnpID =
   subscriptions: null
 
@@ -21,4 +21,4 @@ module.exports = CapnpID =
     capnpID = @genCapnpID()
     editor = atom.workspace.getActiveTextEditor()
     txt = editor.getText()
-    editor.setText("#{capnpID}\n\n"+txt)
+    editor.setText("@0x#{capnpID};\n"+txt)

@@ -9,6 +9,6 @@
   },
   "main": "./lib/capnp.coffee",
   "dependencies": {
-    "bignum": "*"
+    "big-integer": "*"
   }
 }
