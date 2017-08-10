@@ -1,5 +1,5 @@
 {CompositeDisposable} = require 'atom'
-bignum                = require 'big-integer'
+capnpid                = require 'capnpid'
 module.exports = CapnpID =
   subscriptions: null
 
@@ -14,11 +14,9 @@ module.exports = CapnpID =
   deactivate: ->
     @subscriptions.dispose()
 
-  randint: (min=0, max) ->  min + Math.floor(Math.random() * (max - min + 1))
-  genCapnpID: -> bignum(@randint(0, Math.pow(2, 64))).or(bignum(1).shiftLeft(63)).toString(16)
-     #Number(@randint(0, Math.pow(2,64)) | 1<<63).toString(16) #convert to hex.
   newCapnpID: ->
-    capnpID = @genCapnpID()
     editor = atom.workspace.getActiveTextEditor()
+    cursorPosition = editor.getCursorBufferPosition();
     txt = editor.getText()
-    editor.setText("@0x#{capnpID};\n"+txt)
+    editor.setText("#{capnpid.newCapnpID()}\n"+txt)
+    editor.setCursorBufferPosition(cursorPosition);
